@@ -15,83 +15,33 @@ const ListaDeTareas = () => {
   }
 
   return (
-    <div style={{
-      position: "relative",
-      width: "700px",
-      minHeight: "400px",
-      backgroundImage: `url(${fondo})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      border: "3px solid #ccc",
-      borderRadius: "20px",
-      margin: "150px auto",
-    }} >
-      <input style={{
-        textAlign: "center",
-        position: "absolute",
-        top: "-28%",
-        padding: "13px",
-        width: "100%",
-        fontSize: "18px",
-        borderRadius: "8px",
-        border: "2px solid #888",
-        backgroundColor: "rgba(0, 234, 255, 0.23)",
+    
+    <div className="container">
+      <div className="d-flex align-items-center justify-content-center" style={{height:"100vh"}}>
+         <div className="imagen d-flex flex-column p-4">
+      <div className="d-flex align-items-center justify-content-between p-4">
+        <input  
 
-      }} type="text" value={escribir} onChange={(e) => setEscribir(e.target.value)} onKeyDown={(e) => {
-        if (e.key === "Enter") {
-          agregarTarea();
-        }
-      }}
+        type="text" value={escribir} onChange={(e) => setEscribir(e.target.value)} onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            agregarTarea();
+          }
+        }}
         placeholder="Tareas por hacer"
 
       />
       <button
-        style={{
-          position: "absolute",
-          top: "-14%",
-          padding: "12px 20px",
-          width: "100%",
-          fontSize: "18px",
-          borderRadius: "8px",
-          border: "2px solid #888",
-          backgroundColor: "rgba(242, 0, 255, 0.16)",
-
-        }} onClick={agregarTarea}>Agregar tarea</button>
-      <ul
-        style={{
-          paddingLeft: "60px",
-          marginTop: "15px",
-          listStyle: "none",
-          left: "20px",
-          top: "15px",
-          width: "10%",
-          fontSize: "18px",
-          borderRadius: "10px",
-          border: "2px",
-          backgroundColor: "rgba(242, 0, 255, 0.01)",
-
-        }}
-      >
+        onClick={agregarTarea}>Agregar tarea</button>
+      </div>
+     
+          <ul className="container">
 
         {agregar.map((tarea, index) => (
-          <li style={{
-            borderBottom: "5px solid #fff",
-            display: "inline-block"
-
-          }}
+          <li className="d-flex align-items-center justify-content-between"
             key={index}>
             {tarea}
             <button
-              style={{
-                position: "absolute",
-                left: "450px",
-                width: "30%",
-                fontSize: "18px",
-                borderRadius: "10px",
-                border: "2px",
-                backgroundColor: "rgba(242, 0, 255, 0.01)",
-                borderBottom: "5px solid #fff"
-              }}
+
               onClick={() => eliminarTarea(index)}> Bórrame </button>
 
           </li>
@@ -100,7 +50,12 @@ const ListaDeTareas = () => {
         ))}
 
       </ul>
+       
+      
     </div>
+      </div>
+    </div>
+   
   );
 };
 
