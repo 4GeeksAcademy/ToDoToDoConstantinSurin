@@ -4,12 +4,12 @@ import CreateList from "./CreateList";
 
 
 
+
 //create your first component
 const Home = () => {
 	return (
-		<CreateList>
+		<CreateList/>
 			
-		</CreateList>
 	);
 };
 
